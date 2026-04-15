@@ -23,5 +23,5 @@
 **Objective**: Develop the `/delphi-tdd` workflow that enforces structural patterns and tests-first approaches for modern Delphi.
 
 ### Phase 4: Code Generation and Spec Workflows
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Objective**: Build `/delphi-write` and `/delphi-spec` for standardizing new project structures and implementations.
