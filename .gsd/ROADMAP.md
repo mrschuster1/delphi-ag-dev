@@ -1,17 +1,17 @@
 # ROADMAP.md
 
-> **Current Phase**: Not started
+> **Current Phase**: Phase 2
 > **Milestone**: v1.0
 
 ## Must-Haves (from SPEC)
-- [ ] Core Delphi Standards Skill implementation
+- [x] Core Delphi Standards Skill implementation
 - [ ] Specialized workflows (Audit, TDD, Spec, Write)
-- [ ] Clear FMX / VCL component prefix mappings
+- [x] Clear FMX / VCL component prefix mappings
 
 ## Phases
 
 ### Phase 1: Foundation (Core Skill)
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Objective**: Build the core `delphi-standards` skill containing all stylistic, safety, and component prefix rules explicitly designed for Antigravity logic.
 
 ### Phase 2: Auditing Workflow
