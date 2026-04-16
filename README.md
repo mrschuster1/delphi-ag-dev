@@ -1,7 +1,7 @@
 # delphi-ag-dev — Antigravity Agent Plugin
 
 > An Antigravity plugin that turns the multi-agent system into a senior Delphi expert.
-> 🇧🇷 [Leia em Português](README.pt-BR.md)
+> 🇺🇸 [English](README.md) | 🇧🇷 [Português](README.pt-BR.md) | 🇪🇸 [Español](README.es.md)
 
 ---
 
