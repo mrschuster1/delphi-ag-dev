@@ -1,147 +1,372 @@
-# delphi-ag-dev — Antigravity Agent Plugin
+<div align="center">
 
-> An Antigravity plugin that turns the multi-agent system into a **senior Delphi expert**.
->
-> 🇺🇸 [English](README.md) · 🇧🇷 [Português](README.pt-BR.md) · 🇪🇸 [Español](README.es.md)
+<picture>
+  <img src="assets/banner.svg" alt="delphi-ag-dev — Antigravity Agent Plugin" width="100%"/>
+</picture>
 
----
+<br/>
 
-## What is it?
+[![Version](https://img.shields.io/badge/version-1.0.0-e94560?style=flat-square)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
+[![Based on](https://img.shields.io/badge/based%20on-delphi--dev-f5a623?style=flat-square)](https://github.com/adrianosantostreina/delphi-dev)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-0f3460?style=flat-square)](#-installation)
+[![Delphi](https://img.shields.io/badge/Delphi-11%2B-e94560?style=flat-square)](#-standards-applied-automatically)
+[![Framework](https://img.shields.io/badge/framework-VCL%20%7C%20FMX-48bb78?style=flat-square)](#-component-prefixes-vcl--fmx)
 
-**delphi-ag-dev** is a plugin for the **Antigravity** multi-agent AI system that loads a set of **Skills** and **Workflows** to make any AI agent behave like a senior Delphi engineer.
+<br/>
 
-Once installed, the agent automatically enforces:
-- The official **Delphi Style Guide** (Embarcadero)
-- **Clean Code** principles adapted for Object Pascal
-- **SOLID** design patterns applied to Delphi architectures
-- **DUnitX** test-driven development methodology
-- **VCL / FMX** component naming conventions
+**Stop writing sloppy Pascal. Start shipping senior-grade Delphi.**
 
-The plugin activates whenever Delphi-related content is detected — `.pas`, `.dpr`, `.dfm`, `.dpk`, `.dproj` files, or any mention of Object Pascal, FireMonkey, VCL, FireDAC, or RAD Studio.
+*Describe what you need → The agent applies every rule → Watch it generate correct code.*
 
-> **Based on** the original [adrianosantostreina/delphi-dev](https://github.com/adrianosantostreina/delphi-dev) Claude Code plugin, fully ported and adapted for the Antigravity framework.
+<br/>
 
----
+[Getting Started](#-installation) · [How It Works](#-how-it-works) · [Commands](#-commands) · [Standards](#-standards-applied-automatically)
 
-## Features
-
-| Command | Description |
-|---|---|
-| **Auto Delphi Mode** | Any interaction with `.pas`, `.dpr` or `.dfm` files automatically loads the full Delphi code-quality context via the `delphi-standards` skill |
-| **`/delphi-audit`** | Runs a professional technical audit with dimensional scoring and a prioritized modernization roadmap — similar to a senior architect's code review |
-| **`/delphi-tdd`** | Full TDD flow using DUnitX: writes the failing test first (Red), then the implementation (Green), then refactors |
-| **`/delphi-spec`** | Analyzes existing source code and auto-generates a complete `SPEC.md` architectural document |
-| **`/delphi-write`** | Scaffolds new Delphi units (`.pas`, `.dfm`, `.fmx`) with all naming conventions, prefixes, and safety rules applied from line 1 |
+</div>
 
 ---
 
-## Installation
+## 🧠 The Problem
 
-Copy the `.agent/` directory (containing skills and workflows) into your project's root folder.
+> AI-generated Delphi code has a bad reputation — and it deserves it.
 
-```bash
-# 1. Clone this repository
-git clone https://github.com/mrschuster1/delphi-ag-dev.git
+You ask an AI to write a form or a query, and you get **code that ignores conventions**, uses `with` everywhere, concatenates SQL, and creates objects without `try..finally`. Reviewing and fixing it takes longer than writing it yourself.
 
-# 2. Copy skills and workflows into your project
-# Windows / PowerShell
-Copy-Item -Recurse -Force .\delphi-ag-dev\.agent\* .\YourProject\.agent\
+**delphi-ag-dev** fixes that. It's the **context engineering layer** that makes AI-generated Delphi code actually reliable.
 
-# Linux / macOS
-cp -R delphi-ag-dev/.agent/* /path/to/your/project/.agent/
+<table>
+<tr>
+<td width="50%">
+
+### ❌ Without delphi-ag-dev
+```
+"Create a customer form"
+    → with statements everywhere
+    → SQL string concatenation
+    → Missing try..finally
+    → Wrong component prefixes
+    → Code review nightmare
 ```
 
-That's it. The agent will now recognize the Delphi workflows and automatically apply the `delphi-standards` skill to any Delphi interaction.
+</td>
+<td width="50%">
+
+### ✅ With delphi-ag-dev
+```
+"Create a customer form"
+    → /delphi-spec
+    → /delphi-write
+    → /delphi-tdd
+    → /delphi-audit
+    → ✅ Production-ready
+```
+
+</td>
+</tr>
+</table>
+
+> **No boilerplate ceremonies.** No configuration files, no IDE plugins, no build steps.
+> Just an effective set of agent skills and workflows that make Delphi AI coding correct from day one.
 
 ---
 
-## Standards Applied Automatically
+## 👤 Who This Is For
+
+| | |
+|---|---|
+| 🧑‍💻 **Delphi developers** | Using AI assistants who need consistently standard-compliant code |
+| 👥 **Delphi teams** | Who want the whole team's AI output to follow the same coding rules |
+| 😤 **Anyone** | Tired of AI generating code that violates Delphi conventions |
+
+---
+
+## ⚡ Installation
+
+<details>
+<summary><b>🪟 PowerShell (Windows)</b></summary>
+
+```powershell
+# Navigate to your project
+cd YourDelphiProject
+
+# Clone delphi-ag-dev
+git clone https://github.com/mrschuster1/delphi-ag-dev.git delphi-ag-temp
+
+# Copy the agent skills and workflows
+Copy-Item -Recurse -Force .\delphi-ag-temp\.agent\* .\.agent\
+
+# Clean up
+Remove-Item -Recurse -Force delphi-ag-temp
+```
+
+</details>
+
+<details>
+<summary><b>🐧 Bash (Linux / macOS)</b></summary>
+
+```bash
+# Navigate to your project
+cd YourDelphiProject
+
+# Clone delphi-ag-dev
+git clone https://github.com/mrschuster1/delphi-ag-dev.git delphi-ag-temp
+
+# Copy the agent skills and workflows
+cp -r delphi-ag-temp/.agent/* ./.agent/
+
+# Clean up
+rm -rf delphi-ag-temp
+```
+
+</details>
+
+That's it. The agent will now recognize all Delphi workflows and auto-load the `delphi-standards` skill on any Delphi interaction.
+
+> [!TIP]
+> The `delphi-standards` skill activates automatically. You don't need to mention it in your prompts — the moment you open a `.pas` file or mention Delphi code, it kicks in.
+
+---
+
+## 🔄 How It Works
+
+```mermaid
+graph LR
+    A["📋 /delphi-spec"] --> B["✍️ /delphi-write"]
+    B --> C["🧪 /delphi-tdd"]
+    C --> D["🔍 /delphi-audit"]
+    D --> E{"Issues\nfound?"}
+    E -- Yes --> B
+    E -- No --> F["✅ Production Ready"]
+
+    style A fill:#0f3460,color:#fff,stroke:none
+    style B fill:#e94560,color:#fff,stroke:none
+    style C fill:#4a90d9,color:#fff,stroke:none
+    style D fill:#f5a623,color:#000,stroke:none
+    style E fill:#48bb78,color:#000,stroke:none
+    style F fill:#48bb78,color:#fff,stroke:none
+```
+
+| Step | Command | Output |
+|:----:|---------|--------|
+| **1** | `/delphi-spec` | Architecture definition → `SPEC.md` with layer structure |
+| **2** | `/delphi-write` | Scaffolded `.pas`, `.dfm`, `.fmx` files with all conventions |
+| **3** | `/delphi-tdd` | Complete DUnitX test suite → Red → Green → Refactor |
+| **4** | `/delphi-audit` | Quality report with dimensional scoring and fix roadmap |
+
+---
+
+## 🧩 Why It Works
+
+### 📦 Context Engineering
+
+The AI is powerful **if** it has the right rules loaded. Most developers don't set this up. `delphi-ag-dev` handles it automatically through the `delphi-standards` skill:
+
+| Rule Category | What Gets Enforced |
+|---|---|
+| **Naming** | `F`, `A`, `L`, `C_`, `T`, `I`, `E` prefixes — every time |
+| **Formatting** | 2-space indent, 120-char limit, `begin`/`else` on own lines |
+| **Safety** | `try..finally` per object, no empty `except`, parameterized SQL |
+| **Components** | VCL/FMX prefix table (`btn`, `edt`, `lbl`, `grd`, etc.) |
+| **Prohibited** | `with`, `Break`, `Continue`, `Real` — blocked with alternatives |
+
+### 🏷️ Structured Code Generation
+
+Every unit generated follows a strict template:
+
+```pascal
+unit Cliente.Repository;
+
+{$IFDEF FPC}{$MODE DELPHI}{$ENDIF}
+
+interface
+
+uses
+  // RTL
+  System.SysUtils, System.Classes,
+  // FireDAC
+  FireDAC.Comp.Client,
+  // Project
+  Cliente.Interfaces;
+
+type
+  TClienteRepository = class(TInterfacedObject, IClienteRepository)
+  private
+    FConnection: TFDConnection;
+  public
+    constructor Create(const AConnection: TFDConnection);
+    function FindById(const AId: Integer): TClienteDTO;
+  end;
+
+implementation
+
+constructor TClienteRepository.Create(const AConnection: TFDConnection);
+begin
+  FConnection := AConnection;
+end;
+
+function TClienteRepository.FindById(const AId: Integer): TClienteDTO;
+var
+  LQuery: TFDQuery;
+begin
+  LQuery := TFDQuery.Create(nil);
+  try
+    LQuery.Connection := FConnection;
+    LQuery.SQL.Text := 'SELECT * FROM clientes WHERE id = :pId';
+    LQuery.ParamByName('pId').AsInteger := AId;
+    LQuery.Open;
+    // ... map result
+  finally
+    LQuery.Free;
+  end;
+end;
+
+end.
+```
+
+### 🔬 Empirical Audit
+
+`/delphi-audit` scores code across multiple dimensions — not just "looks okay":
+
+| Dimension | What's Checked |
+|:---:|---|
+| 🏷️ **Naming** | Prefix compliance across all identifiers |
+| 📐 **Formatting** | Indentation, line length, `begin`/`else` placement |
+| 🔒 **Safety** | `try..finally` coverage, SQL parameterization |
+| 🏗️ **Architecture** | Layer separation, dependency direction |
+| 🧪 **Testability** | Interface usage, dependency injection patterns |
+| ⚡ **Performance** | Query construction, object lifecycle |
+
+---
+
+## 🎮 Commands
+
+### 🔵 Core Workflow
+
+| Command | Purpose |
+|---------|---------|
+| `/delphi-spec` | 📋 Define architecture before writing a single line of code |
+| `/delphi-write` | ✍️ Generate Delphi units (`.pas`, `.dfm`, `.fmx`) with all standards |
+| `/delphi-tdd` | 🧪 Full TDD cycle — DUnitX test suite → Red → Green → Refactor |
+| `/delphi-audit` | 🔍 Deep technical audit with dimensional scoring and fix roadmap |
+
+### 💡 Typical Session
+
+```
+/delphi-spec "Customer management module with CRUD"
+    → Defines layers, units, interfaces
+
+/delphi-write "TClienteForm — main form with search and grid"
+    → Generates frmCliente.pas + frmCliente.dfm with correct prefixes
+
+/delphi-tdd "TClienteRepository"
+    → Generates TestClienteRepository.pas with full DUnitX suite
+
+/delphi-audit "frmCliente.pas"
+    → Scores code quality, lists violations, provides fixes
+```
+
+> [!IMPORTANT]
+> Always run `/delphi-spec` first. The agent can't write the right architecture if it doesn't know what it's building.
+
+---
+
+## 📐 Standards Applied Automatically
 
 ### Naming Prefixes
 
 | Prefix | Applies To | Example |
 |---|---|---|
-| `F` | Class fields (private attributes) | `FClientName: string` |
+| `F` | Class fields (private) | `FClientName: string` |
 | `A` | Method parameters | `procedure Save(const AName: string)` |
 | `L` | Local variables | `LQuery: TFDQuery` |
-| `C_` | Constants (+ UPPER_CASE body) | `C_MAX_RETRIES = 3` |
+| `C_` | Constants | `C_MAX_RETRIES = 3` |
 | `T` | Types and classes | `TClientRepository` |
 | `I` | Interfaces | `IClientRepository` |
 | `E` | Exception classes | `EClientNotFound` |
 
-### Formatting Rules
-
-- ✅ **2-space indentation** — tabs are forbidden
-- ✅ **120-character line limit** — strict enforcement
-- ✅ `begin` and `else` always on their **own lines**
-- ✅ **One variable per line** in `var` blocks
-- ✅ `uses` clause ordered: `RTL → VCL/FMX → FireDAC → Third-party → Project`
-
 ### Prohibited Constructs
 
-| Construct | Reason | Alternative |
+| Construct | Why Banned | Alternative |
 |---|---|---|
-| `with` | Creates ambiguity, makes debugging impossible | Explicit variable references |
-| `Break` / `Continue` | Hidden control flow | Redesign loop with proper conditions |
-| `Real` | Deprecated, imprecise | Use `Double` or `Currency` |
-| `Exit` (mid-method) | Reduces readability | Only allowed as guard clauses at the method top |
+| `with` | Ambiguity, impossible to debug | Explicit variable references |
+| `Break` / `Continue` | Hidden control flow | Proper loop conditions |
+| `Real` | Deprecated, imprecise | `Double` or `Currency` |
+| `Exit` (mid-method) | Hides intent | Guard clauses at method top only |
 
 ### Safety Rules
 
-- ✅ **One resource per `try..finally`** — never group multiple objects
-- ✅ **No empty `except` blocks** — exceptions must be handled or logged
-- ✅ **SQL always parameterized** — string concatenation for queries is blocked
-- ✅ **No `const` on interface parameters** — maintains ARC compatibility
-- ✅ **No global variables** — use `class var` or dependency injection instead
+- ✅ **One resource per `try..finally`** — never group multiple object creations
+- ✅ **No empty `except` blocks** — handle or log, never swallow
+- ✅ **SQL always parameterized** — `ParamByName`, never concatenation
+- ✅ **No `const` on interface params** — ARC compatibility
+- ✅ **No global variables** — `class var` or dependency injection
 
 ### Component Prefixes (VCL / FMX)
 
-| Prefix | Component |
-|---|---|
-| `btn` | TButton |
-| `edt` | TEdit |
-| `lbl` | TLabel |
-| `mmo` | TMemo |
-| `cbx` | TComboBox |
-| `grd` | TDBGrid / TStringGrid |
-| `qry` | TFDQuery |
-| `cnn` | TFDConnection |
-| `dts` | TDataSource |
-| `pnl` | TPanel |
-| `tmr` | TTimer |
-| `img` | TImage |
-| `pgc` | TPageControl |
-| `tab` | TTabSheet |
-| `tbar` | TToolBar |
-| `sbar` | TStatusBar |
+| Prefix | Component | Prefix | Component |
+|---|---|---|---|
+| `btn` | TButton | `pgc` | TPageControl |
+| `edt` | TEdit | `tab` | TTabSheet |
+| `lbl` | TLabel | `tbar` | TToolBar |
+| `mmo` | TMemo | `sbar` | TStatusBar |
+| `cbx` | TComboBox | `img` | TImage |
+| `grd` | TDBGrid / TStringGrid | `tmr` | TTimer |
+| `qry` | TFDQuery | `pnl` | TPanel |
+| `cnn` | TFDConnection | `dts` | TDataSource |
 
 ---
 
-## Architecture
+## 📁 File Structure
 
 ```
 .agent/
 ├── skills/
 │   └── delphi-standards/
-│       └── SKILL.md          ← Core Delphi coding rules (single source of truth)
+│       └── SKILL.md          ← Single source of truth for all Delphi rules
 └── workflows/
-    ├── delphi-audit.md       ← /delphi-audit command
-    ├── delphi-tdd.md         ← /delphi-tdd command
-    ├── delphi-spec.md        ← /delphi-spec command
-    └── delphi-write.md       ← /delphi-write command
+    ├── delphi-audit.md       ← /delphi-audit
+    ├── delphi-tdd.md         ← /delphi-tdd
+    ├── delphi-spec.md        ← /delphi-spec
+    └── delphi-write.md       ← /delphi-write
 ```
 
 ---
 
-## Included Skills & Workflows
+## 🧠 Philosophy
 
-| Type | Name | Purpose |
-|---|---|---|
-| Skill | `delphi-standards` | Loaded automatically on Delphi content detection — enforces all code quality rules |
-| Workflow | `/delphi-write` | Scaffolds complete, production-ready Delphi units following all standards |
-| Workflow | `/delphi-spec` | Generates an architectural SPEC document from source code analysis |
-| Workflow | `/delphi-tdd` | Orchestrates full Red-Green-Refactor TDD cycle with DUnitX |
-| Workflow | `/delphi-audit` | Deep technical code review — scores quality across multiple dimensions |
+<table>
+<tr>
+<td>📋</td><td><b>Spec before code</b> — Define the architecture in <code>/delphi-spec</code> before writing anything</td>
+</tr>
+<tr>
+<td>🔬</td><td><b>Rules over memory</b> — The AI doesn't remember your conventions; the skill enforces them every time</td>
+</tr>
+<tr>
+<td>🧪</td><td><b>Tests are not optional</b> — <code>/delphi-tdd</code> is part of the core workflow, not an afterthought</td>
+</tr>
+<tr>
+<td>🔍</td><td><b>Audit before merging</b> — <code>/delphi-audit</code> catches what code review misses</td>
+</tr>
+<tr>
+<td>🚫</td><td><b>No compromises on safety</b> — <code>try..finally</code>, parameterized SQL, and no empty <code>except</code> are non-negotiable</td>
+</tr>
+<tr>
+<td>🤖</td><td><b>Model-agnostic</b> — Works with Gemini, Claude, or any capable LLM in Antigravity</td>
+</tr>
+</table>
+
+---
+
+## 📚 Documentation
+
+| Resource | Description |
+|----------|-------------|
+| [README.md](README.md) | This file — English |
+| [README.pt-BR.md](README.pt-BR.md) | Português |
+| [README.es.md](README.es.md) | Español |
+| [Privacy Policy](privacy-policy.md) | Data handling and privacy |
+| [delphi-standards Skill](.agent/skills/delphi-standards/SKILL.md) | Full coding rules reference |
 
 ---
 
@@ -154,12 +379,12 @@ That's it. The agent will now recognize the Delphi workflows and automatically a
 
 ---
 
-## License
+<div align="center">
 
-MIT © 2026
+<sub>Adapted from <a href="https://github.com/adrianosantostreina/delphi-dev">adrianosantostreina/delphi-dev</a> for Google Antigravity</sub>
 
----
+<br/>
 
-## Privacy Policy
+[![GitHub](https://img.shields.io/badge/GitHub-mrschuster1-181717?style=flat-square&logo=github)](https://github.com/mrschuster1/delphi-ag-dev)
 
-[View Privacy Policy](privacy-policy.md)
+</div>
