@@ -1,0 +1,8 @@
+# GSD Session Files
+.gsd/STATE.md
+.gsd/JOURNAL.md
+.gsd/TODO.md
+
+# Delphi Temp / Agent Tooling
+.gemini/
+delphi-ag-temp/
