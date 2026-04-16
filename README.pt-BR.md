@@ -15,7 +15,12 @@
 
 <br/>
 
+🇺🇸 [English](README.md) &nbsp;·&nbsp; 🇧🇷 [Português](README.pt-BR.md) &nbsp;·&nbsp; 🇪🇸 [Español](README.es.md)
+
+<br/>
+
 **Pare de escrever Pascal desleixado. Comece a entregar Delphi de nível sênior.**
+
 
 *Descreva o que precisa → O agente aplica todas as regras → Veja o código correto ser gerado.*
 

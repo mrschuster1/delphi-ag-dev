@@ -15,7 +15,12 @@
 
 <br/>
 
+🇺🇸 [English](README.md) &nbsp;·&nbsp; 🇧🇷 [Português](README.pt-BR.md) &nbsp;·&nbsp; 🇪🇸 [Español](README.es.md)
+
+<br/>
+
 **Stop writing sloppy Pascal. Start shipping senior-grade Delphi.**
+
 
 *Describe what you need → The agent applies every rule → Watch it generate correct code.*
 
