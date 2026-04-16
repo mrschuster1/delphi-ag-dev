@@ -9,7 +9,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-e94560?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
 [![Based on](https://img.shields.io/badge/based%20on-delphi--dev-f5a623?style=flat-square)](https://github.com/adrianosantostreina/delphi-dev)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-0f3460?style=flat-square)](#-installation)
+[![Platform](https://img.shields.io/badge/platform-Windows%20only-0f3460?style=flat-square)](#-installation)
 [![Delphi](https://img.shields.io/badge/Delphi-11%2B-e94560?style=flat-square)](#-standards-applied-automatically)
 [![Framework](https://img.shields.io/badge/framework-VCL%20%7C%20FMX-48bb78?style=flat-square)](#-component-prefixes-vcl--fmx)
 
@@ -83,9 +83,6 @@ You ask an AI to write a form or a query, and you get **code that ignores conven
 
 ## ⚡ Installation
 
-<details>
-<summary><b>🪟 PowerShell (Windows)</b></summary>
-
 ```powershell
 # Navigate to your project
 cd YourDelphiProject
@@ -99,27 +96,6 @@ Copy-Item -Recurse -Force .\delphi-ag-temp\.agent\* .\.agent\
 # Clean up
 Remove-Item -Recurse -Force delphi-ag-temp
 ```
-
-</details>
-
-<details>
-<summary><b>🐧 Bash (Linux / macOS)</b></summary>
-
-```bash
-# Navigate to your project
-cd YourDelphiProject
-
-# Clone delphi-ag-dev
-git clone https://github.com/mrschuster1/delphi-ag-dev.git delphi-ag-temp
-
-# Copy the agent skills and workflows
-cp -r delphi-ag-temp/.agent/* ./.agent/
-
-# Clean up
-rm -rf delphi-ag-temp
-```
-
-</details>
 
 That's it. The agent will now recognize all Delphi workflows and auto-load the `delphi-standards` skill on any Delphi interaction.
 

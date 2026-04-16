@@ -9,7 +9,7 @@
 [![Versão](https://img.shields.io/badge/versão-1.0.0-e94560?style=flat-square)](CHANGELOG.md)
 [![Licença](https://img.shields.io/badge/licença-MIT-2196F3?style=flat-square)](LICENSE)
 [![Baseado em](https://img.shields.io/badge/baseado%20em-delphi--dev-f5a623?style=flat-square)](https://github.com/adrianosantostreina/delphi-dev)
-[![Plataforma](https://img.shields.io/badge/plataforma-Windows%20%7C%20Linux%20%7C%20Mac-0f3460?style=flat-square)](#-instalação)
+[![Plataforma](https://img.shields.io/badge/plataforma-Somente%20Windows-0f3460?style=flat-square)](#-instalação)
 [![Delphi](https://img.shields.io/badge/Delphi-11%2B-e94560?style=flat-square)](#-padrões-aplicados-automaticamente)
 [![Framework](https://img.shields.io/badge/framework-VCL%20%7C%20FMX-48bb78?style=flat-square)](#-prefixos-de-componentes-vcl--fmx)
 
@@ -83,9 +83,6 @@ Você pede a uma IA para escrever um formulário ou uma query, e recebe **códig
 
 ## ⚡ Instalação
 
-<details>
-<summary><b>🪟 PowerShell (Windows)</b></summary>
-
 ```powershell
 # Acesse seu projeto
 cd SeuProjetoDelphi
@@ -99,27 +96,6 @@ Copy-Item -Recurse -Force .\delphi-ag-temp\.agent\* .\.agent\
 # Limpeza
 Remove-Item -Recurse -Force delphi-ag-temp
 ```
-
-</details>
-
-<details>
-<summary><b>🐧 Bash (Linux / macOS)</b></summary>
-
-```bash
-# Acesse seu projeto
-cd SeuProjetoDelphi
-
-# Clone o delphi-ag-dev
-git clone https://github.com/mrschuster1/delphi-ag-dev.git delphi-ag-temp
-
-# Copie as skills e workflows do agente
-cp -r delphi-ag-temp/.agent/* ./.agent/
-
-# Limpeza
-rm -rf delphi-ag-temp
-```
-
-</details>
 
 Pronto. O agente agora reconhecerá todos os workflows Delphi e carregará automaticamente a skill `delphi-standards` em qualquer interação Delphi.
 
