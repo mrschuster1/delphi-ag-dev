@@ -1,99 +1,151 @@
 # delphi-ag-dev — Plugin Agent de Antigravity
 
-> Un plugin de Antigravity que convierte el sistema de múltiples agentes en un programador experto senior de Delphi.
-> 🇺🇸 [English](README.md) | 🇧🇷 [Português](README.pt-BR.md) | 🇪🇸 [Español](README.es.md)
+> Un plugin de Antigravity que convierte el sistema multi-agente en un **experto senior en Delphi**.
+>
+> 🇺🇸 [English](README.md) · 🇧🇷 [Português](README.pt-BR.md) · 🇪🇸 [Español](README.es.md)
 
 ---
 
-## Qué es
+## ¿Qué es?
 
-**delphi-ag-dev** se activa automáticamente en Antigravity a través de sus habilidades (*skills*) principales siempre que se trabaje en contenido relacionado con Delphi: archivos `.pas`, `.dpr`, `.dfm`, `.dpk`, `.dproj`, o cualquier mención de Object Pascal, FireMonkey, VCL, FireDAC o RAD Studio. Una vez activo, el Agente Antigravity aplica de forma nativa la Guía de Estilo Oficial de Delphi, principios de *Clean Code* y patrones *SOLID* sin necesidad de pedirlo.
+**delphi-ag-dev** es un plugin para el sistema de IA multi-agente **Antigravity** que carga un conjunto de **Skills** y **Workflows** para hacer que cualquier agente de IA se comporte como un desarrollador Delphi de nivel senior.
+
+Una vez instalado, el agente aplica automáticamente:
+- La **Guía de Estilo de Delphi** oficial (Embarcadero)
+- Principios de **Clean Code** adaptados para Object Pascal
+- Patrones de diseño **SOLID** aplicados a arquitecturas Delphi
+- Metodología de desarrollo guiado por pruebas con **DUnitX**
+- Convenciones de nomenclatura de componentes **VCL / FMX**
+
+El plugin se activa siempre que se detecte contenido relacionado con Delphi — archivos `.pas`, `.dpr`, `.dfm`, `.dpk`, `.dproj`, o cualquier mención de Object Pascal, FireMonkey, VCL, FireDAC o RAD Studio.
+
+> **Basado en** el plugin original [adrianosantostreina/delphi-dev](https://github.com/adrianosantostreina/delphi-dev) para Claude Code, completamente portado y adaptado para el framework Antigravity.
 
 ---
 
-## Características destacadas
+## Características
 
 | Comando | Descripción |
 |---|---|
-| **Auto Delphi Mode** | Leer cualquier archivo `.pas`, `.dpr` o `.dfm` activa automáticamente todo el contexto estándar de codificación a través de la destreza `delphi-standards` |
-| **`/delphi-audit`** | Genera una auditoría técnica profesional completa con puntuación por dimensión y una hoja de ruta de modernización priorizada |
-| **`/delphi-tdd`** | Genera por completo una suite de pruebas unitarias DUnitX para el proyecto aplicando un enfoque *Red-Green-Refactor* |
-| **`/delphi-spec`** | Analiza el código fuente del proyecto actual y autogenera una documentación arquitectónica en `SPEC.md` |
-| **`/delphi-write`** | Escribe código nuevo con todos los estándares aplicados desde el inicio generados para `.pas`, `.dfm` y `.fmx` |
+| **Modo Auto Delphi** | Cualquier interacción con archivos `.pas`, `.dpr` o `.dfm` carga automáticamente todo el contexto de calidad de código Delphi a través de la *skill* `delphi-standards` |
+| **`/delphi-audit`** | Ejecuta una auditoría técnica profesional completa con puntuación por dimensión y una hoja de ruta de modernización priorizada — similar a la revisión de código de un arquitecto senior |
+| **`/delphi-tdd`** | Flujo TDD completo con DUnitX: escribe primero el test que falla (Red), luego la implementación (Green) y finalmente refactoriza |
+| **`/delphi-spec`** | Analiza el código fuente existente y genera automáticamente un documento arquitectónico completo `SPEC.md` |
+| **`/delphi-write`** | Crea la estructura de nuevas unidades Delphi (`.pas`, `.dfm`, `.fmx`) con todas las convenciones de nomenclatura, prefijos y reglas de seguridad aplicadas desde la línea 1 |
 
 ---
 
 ## Instalación
 
-Para agregar estas capacidades a cualquier proyecto de Antigravity, simplemente copia el directorio `.agent/` (que incluye las habilidades y los flujos de trabajo) a la carpeta raíz temporal o principal de su proyecto:
+Copia el directorio `.agent/` (que contiene skills y workflows) en la carpeta raíz de tu proyecto.
 
 ```bash
-# Clona este repositorio
+# 1. Clona este repositorio
 git clone https://github.com/mrschuster1/delphi-ag-dev.git
 
-# Copia las skills y workflows en el proyecto
-# (Windows / PowerShell)
-Copy-Item -Recurse -Force .\delphi-ag-dev\.agent\* .\SuProyecto\.agent\
+# 2. Copia skills y workflows en tu proyecto
+# Windows / PowerShell
+Copy-Item -Recurse -Force .\delphi-ag-dev\.agent\* .\TuProyecto\.agent\
 
-# (Linux / Mac)
-cp -R delphi-ag-dev/.agent/* /path/to/your/project/.agent/
+# Linux / macOS
+cp -R delphi-ag-dev/.agent/* /ruta/a/tu/proyecto/.agent/
 ```
 
-### Después de la instalación
-
-El agente de inmediato reconocerá los flujos de trabajo (`/delphi-write`, etc.) y la *skill* base `delphi-standards` se cargará de forma automática cuando interactúe con el código de Delphi.
+Listo. El agente reconocerá los flujos de trabajo de Delphi y aplicará automáticamente la *skill* `delphi-standards` a cualquier interacción con Delphi.
 
 ---
 
-## Estándares que se aplican automáticamente
+## Estándares Aplicados Automáticamente
 
-### Prefijos de codificación
-- `F` — propiedades de clase (*Fields*) (atributos privados)
-- `A` — parámetros de métodos (*Arguments*)
-- `L` — variables locales (*Local variables*)
-- `C_` — constantes (+ CUERPO_EN_MAYUSCULAS)
-- `T` — clases y tipos personalizados
-- `I` — interfaces
-- `E` — excepciones
+### Prefijos de nomenclatura
 
-### Formato y estilo visual
-- ✅ Indentación de 2 espacios estrictamente (nada de tabs)
-- ✅ Límite estricto de margen a 120 caracteres por línea
-- ✅ `begin` y `else` en sus propias líneas y bloques independientes
-- ✅ Una variable separada y declarada por línea
-- ✅ Una unidad (unit) por línea en la cláusula `uses` organizada estructuralmente (RTL → VCL/FMX → FireDAC → Herramientas Externas → Proyecto)
-
-### Comandos Prohibidos
-- ❌ Uso de `with`: provoca ambigüedad y problemas graves de depuración
-- ❌ Uso de `Break` / `Continue`: se deben emplear condiciones lógicas en los bucles
-- ❌ El tipo `Real`: obsoleto, se debe usar siempre `Double` o `Currency`
-- ⚠️ Instrucción `Exit`: se permite exclusivamente al inicio del método como mecanismo de cláusulas protectoras (Guard clauses)
-
-### Reglas de Prevención y Seguridad
-- ✅ Apenas un único recurso liberado por cada bloque de `try..finally`
-- ✅ Prohibidos drásticamente los bloques `except` ocultos/vacíos
-- ✅ Código de bases de datos/SQL siempre manejado a través de parámetros (QQuery Params), sin concatenación vulgar de cadenas para evadir SQL Injections
-- ✅ Empleo de `const` no se aplica globalmente a parámetros bajo el cuidado de interfaces para mantener retrocompatibilidad (ARC)
-- ✅ Desuso estricto de variables globales, adaptadas a ámbito local, clases u objetos dinámicos `class var`
-
-### Prefijos y estandarización de Componentes (VCL / FMX)
-`btn`, `edt`, `lbl`, `mmo`, `cbx`, `grd`, `qry`, `cnn`, `dts`, `pnl`, `tmr`, entre otros guiados de cerca por la normativa oficial de la IDE.
-
----
-
-## Workflows y Skills Disponibles
-
-| Categoría | Nombre | Propósito |
+| Prefijo | Se aplica a | Ejemplo |
 |---|---|---|
-| Skill | `delphi-standards` | Se activa de forma reactiva al localizarse detección de archivos o sintaxis Delphi para asimilar normativas de calidad |
-| Workflow | `/delphi-write` | Elabora código Delphi completo y apto para producción sin violar reglas preestablecidas |
-| Workflow | `/delphi-spec` | Compilador automático de informes con documentación algorítmica desde lecturas de código natural |
-| Workflow | `/delphi-tdd` | Molde arquitectónico creador de TDD a través de DUnitX suites |
-| Workflow | `/delphi-audit` | Escáner algorítmico intensivo sobre fallos técnicos o deuda estructural — enuncia fallos de convenciones de código |
+| `F` | Campos de clase (atributos privados) | `FNombreCliente: string` |
+| `A` | Parámetros de métodos | `procedure Guardar(const ANombre: string)` |
+| `L` | Variables locales | `LQuery: TFDQuery` |
+| `C_` | Constantes (+ CUERPO_MAYUSCULAS) | `C_MAX_INTENTOS = 3` |
+| `T` | Tipos y clases | `TRepositorioCliente` |
+| `I` | Interfaces | `IRepositorioCliente` |
+| `E` | Clases de excepción | `EClienteNoEncontrado` |
+
+### Reglas de formato
+
+- ✅ **Sangría de 2 espacios** — las tabulaciones están prohibidas
+- ✅ **Límite de 120 caracteres por línea** — aplicado estrictamente
+- ✅ `begin` y `else` siempre en **sus propias líneas**
+- ✅ **Una variable por línea** en bloques `var`
+- ✅ Cláusula `uses` ordenada: `RTL → VCL/FMX → FireDAC → Terceros → Proyecto`
+
+### Construcciones prohibidas
+
+| Construcción | Motivo | Alternativa |
+|---|---|---|
+| `with` | Crea ambigüedad e imposibilita la depuración | Referencias explícitas de variable |
+| `Break` / `Continue` | Flujo de control oculto | Rediseña el bucle con condiciones adecuadas |
+| `Real` | Obsoleto e impreciso | Usa `Double` o `Currency` |
+| `Exit` (en el medio del método) | Reduce la legibilidad | Solo permitido como *guard clauses* al inicio del método |
+
+### Reglas de seguridad
+
+- ✅ **Un recurso por `try..finally`** — nunca agrupar múltiples objetos
+- ✅ **Sin bloques `except` vacíos** — las excepciones deben ser manejadas o registradas
+- ✅ **SQL siempre parametrizado** — la concatenación de cadenas para queries está bloqueada
+- ✅ **Sin `const` en parámetros de interfaz** — mantiene compatibilidad con ARC
+- ✅ **Sin variables globales** — usa `class var` o inyección de dependencias
+
+### Prefijos de componentes (VCL / FMX)
+
+| Prefijo | Componente |
+|---|---|
+| `btn` | TButton |
+| `edt` | TEdit |
+| `lbl` | TLabel |
+| `mmo` | TMemo |
+| `cbx` | TComboBox |
+| `grd` | TDBGrid / TStringGrid |
+| `qry` | TFDQuery |
+| `cnn` | TFDConnection |
+| `dts` | TDataSource |
+| `pnl` | TPanel |
+| `tmr` | TTimer |
+| `img` | TImage |
+| `pgc` | TPageControl |
+| `tab` | TTabSheet |
+| `tbar` | TToolBar |
+| `sbar` | TStatusBar |
 
 ---
 
-## Basado y fundamentado bajo
+## Arquitectura
+
+```
+.agent/
+├── skills/
+│   └── delphi-standards/
+│       └── SKILL.md          ← Reglas centrales de codificación Delphi (fuente única de la verdad)
+└── workflows/
+    ├── delphi-audit.md       ← Comando /delphi-audit
+    ├── delphi-tdd.md         ← Comando /delphi-tdd
+    ├── delphi-spec.md        ← Comando /delphi-spec
+    └── delphi-write.md       ← Comando /delphi-write
+```
+
+---
+
+## Skills y Workflows incluidos
+
+| Tipo | Nombre | Propósito |
+|---|---|---|
+| Skill | `delphi-standards` | Se carga automáticamente al detectar contenido Delphi — aplica todas las reglas de calidad de código |
+| Workflow | `/delphi-write` | Crea unidades Delphi completas y listas para producción siguiendo todos los estándares |
+| Workflow | `/delphi-spec` | Genera un documento SPEC arquitectónico a partir del análisis del código fuente |
+| Workflow | `/delphi-tdd` | Orquesta el ciclo completo de TDD Red-Green-Refactor con DUnitX |
+| Workflow | `/delphi-audit` | Revisión técnica profunda del código — puntúa la calidad en múltiples dimensiones |
+
+---
+
+## Basado en
 
 - *Delphi Coding Standards v4.0.1* — Adriano Santos
 - *Clean Code and Best Practices in Delphi* — Adriano Santos
@@ -105,3 +157,9 @@ El agente de inmediato reconocerá los flujos de trabajo (`/delphi-write`, etc.)
 ## Licencia
 
 MIT © 2026
+
+---
+
+## Política de Privacidad
+
+[Ver Política de Privacidad](privacy-policy.es.md)
